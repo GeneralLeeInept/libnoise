@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5D2C39B9-CA32-4080-8A78-0808D4DA7818}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)_builds\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)_builds\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBNOISE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;LIBNOISE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LIBNOISE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;LIBNOISE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\basictypes.h" />
+    <ClInclude Include="..\src\exception.h" />
+    <ClInclude Include="..\src\interp.h" />
+    <ClInclude Include="..\src\latlon.h" />
+    <ClInclude Include="..\src\mathconsts.h" />
+    <ClInclude Include="..\src\misc.h" />
+    <ClInclude Include="..\src\model\cylinder.h" />
+    <ClInclude Include="..\src\model\line.h" />
+    <ClInclude Include="..\src\model\model.h" />
+    <ClInclude Include="..\src\model\plane.h" />
+    <ClInclude Include="..\src\model\sphere.h" />
+    <ClInclude Include="..\src\module\abs.h" />
+    <ClInclude Include="..\src\module\add.h" />
+    <ClInclude Include="..\src\module\billow.h" />
+    <ClInclude Include="..\src\module\blend.h" />
+    <ClInclude Include="..\src\module\cache.h" />
+    <ClInclude Include="..\src\module\checkerboard.h" />
+    <ClInclude Include="..\src\module\clamp.h" />
+    <ClInclude Include="..\src\module\const.h" />
+    <ClInclude Include="..\src\module\curve.h" />
+    <ClInclude Include="..\src\module\cylinders.h" />
+    <ClInclude Include="..\src\module\displace.h" />
+    <ClInclude Include="..\src\module\exponent.h" />
+    <ClInclude Include="..\src\module\invert.h" />
+    <ClInclude Include="..\src\module\max.h" />
+    <ClInclude Include="..\src\module\min.h" />
+    <ClInclude Include="..\src\module\module.h" />
+    <ClInclude Include="..\src\module\modulebase.h" />
+    <ClInclude Include="..\src\module\multiply.h" />
+    <ClInclude Include="..\src\module\perlin.h" />
+    <ClInclude Include="..\src\module\power.h" />
+    <ClInclude Include="..\src\module\ridgedmulti.h" />
+    <ClInclude Include="..\src\module\rotatepoint.h" />
+    <ClInclude Include="..\src\module\scalebias.h" />
+    <ClInclude Include="..\src\module\scalepoint.h" />
+    <ClInclude Include="..\src\module\select.h" />
+    <ClInclude Include="..\src\module\spheres.h" />
+    <ClInclude Include="..\src\module\terrace.h" />
+    <ClInclude Include="..\src\module\translatepoint.h" />
+    <ClInclude Include="..\src\module\turbulence.h" />
+    <ClInclude Include="..\src\module\voronoi.h" />
+    <ClInclude Include="..\src\noise.h" />
+    <ClInclude Include="..\src\noisegen.h" />
+    <ClInclude Include="..\src\settings.h" />
+    <ClInclude Include="..\src\vectortable.h" />
+    <ClInclude Include="..\src\win32\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\latlon.cpp" />
+    <ClCompile Include="..\src\model\cylinder.cpp" />
+    <ClCompile Include="..\src\model\line.cpp" />
+    <ClCompile Include="..\src\model\plane.cpp" />
+    <ClCompile Include="..\src\model\sphere.cpp" />
+    <ClCompile Include="..\src\module\abs.cpp" />
+    <ClCompile Include="..\src\module\add.cpp" />
+    <ClCompile Include="..\src\module\billow.cpp" />
+    <ClCompile Include="..\src\module\blend.cpp" />
+    <ClCompile Include="..\src\module\cache.cpp" />
+    <ClCompile Include="..\src\module\checkerboard.cpp" />
+    <ClCompile Include="..\src\module\clamp.cpp" />
+    <ClCompile Include="..\src\module\const.cpp" />
+    <ClCompile Include="..\src\module\curve.cpp" />
+    <ClCompile Include="..\src\module\cylinders.cpp" />
+    <ClCompile Include="..\src\module\displace.cpp" />
+    <ClCompile Include="..\src\module\exponent.cpp" />
+    <ClCompile Include="..\src\module\invert.cpp" />
+    <ClCompile Include="..\src\module\max.cpp" />
+    <ClCompile Include="..\src\module\min.cpp" />
+    <ClCompile Include="..\src\module\modulebase.cpp" />
+    <ClCompile Include="..\src\module\multiply.cpp" />
+    <ClCompile Include="..\src\module\perlin.cpp" />
+    <ClCompile Include="..\src\module\power.cpp" />
+    <ClCompile Include="..\src\module\ridgedmulti.cpp" />
+    <ClCompile Include="..\src\module\rotatepoint.cpp" />
+    <ClCompile Include="..\src\module\scalebias.cpp" />
+    <ClCompile Include="..\src\module\scalepoint.cpp" />
+    <ClCompile Include="..\src\module\select.cpp" />
+    <ClCompile Include="..\src\module\spheres.cpp" />
+    <ClCompile Include="..\src\module\terrace.cpp" />
+    <ClCompile Include="..\src\module\translatepoint.cpp" />
+    <ClCompile Include="..\src\module\turbulence.cpp" />
+    <ClCompile Include="..\src\module\voronoi.cpp" />
+    <ClCompile Include="..\src\noisegen.cpp" />
+    <ClCompile Include="..\src\win32\dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\src\win32\noise.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

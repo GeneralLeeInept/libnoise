@@ -66,7 +66,7 @@ namespace noise
     /// SetBounds() method.
     ///
     /// This noise module requires one source module.
-    class Clamp: public Module
+    class LIBNOISE_API Clamp: public Module
     {
 
       public:

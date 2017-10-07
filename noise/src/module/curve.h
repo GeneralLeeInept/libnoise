@@ -78,7 +78,7 @@ namespace noise
     /// added to the curve.  
     ///
     /// This noise module requires one source module.
-    class Curve: public Module
+    class LIBNOISE_API Curve: public Module
     {
 
       public:

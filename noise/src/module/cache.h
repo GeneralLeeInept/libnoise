@@ -64,7 +64,7 @@ namespace noise
     /// noise module in which it is included.
     ///
     /// This noise module requires one source module.
-    class Cache: public Module
+    class LIBNOISE_API Cache: public Module
     {
 
       public:

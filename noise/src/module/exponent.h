@@ -54,7 +54,7 @@ namespace noise
     /// rescales that value back to the original range.
     ///
     /// This noise module requires one source module.
-    class Exponent: public Module
+    class LIBNOISE_API Exponent: public Module
     {
 
       public:
